@@ -8,35 +8,35 @@
     <title>Angular Assignment</title>
 </head>
 <body>
-    <p>App component</p>
-    <div>
-    </div>
-     <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>Blend Name</th>
-                <th>Intensifier</th>
-                <th>Notes</th>
-                <th>Origin</th>
-                <th>Variety</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let item of data | paginate: { id: 'listing_pagination',
-                itemsPerPage: 10,
-                currentPage: page,
-                totalItems: totalRecords }">
-                <td>{{ item.blend_name }}</td>
-                <td>{{ item.intensifier }}</td>
-                <td>{{ item.notes }}</td>
-                <td>{{ item.origin }}</td>
-                <td>{{ item.variety}}</td>
-            </tr>
-        </tbody>
-    </table>
-    <div>
-        <pagination-controls id="listing_pagination" (pageChange)="page = $event"></pagination-controls>
+    <div class="container-fluid">
+        <h1>Product List Page</h1>
+        <table class="table table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Blend Name</th>
+                    <th>Intensifier</th>
+                    <th>Notes</th>
+                    <th>Origin</th>
+                    <th>Variety</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of data | paginate: { id: 'listing_pagination',
+                    itemsPerPage: 10,
+                    currentPage: page,
+                    totalItems: totalRecords }">
+                    <td>{{ item.blend_name }}</td>
+                    <td>{{ item.intensifier }}</td>
+                    <td>{{ item.notes }}</td>
+                    <td>{{ item.origin }}</td>
+                    <td>{{ item.variety}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <div>
+            <pagination-controls id="listing_pagination" (pageChange)="page = $event"></pagination-controls>
+        </div>
     </div>
 </body>
-<footer>Chris Keizer</footer>
+<footer class="container-fluid"><b>Chris Keizer</b></footer>
 </html>
